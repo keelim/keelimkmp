@@ -11,6 +11,6 @@ fun App() {
             style {
                 property("background-color", Color.RED)
             }
-        }
+        },
     )
 }
