@@ -19,7 +19,10 @@ kotlin {
         }
         binaries.executable()
     }
-    
+    js(IR) {
+        browser()
+        binaries.executable()
+    }
     androidTarget {
         compilations.all {
             kotlinOptions {
@@ -43,7 +46,12 @@ kotlin {
     
     sourceSets {
         val desktopMain by getting
-        
+        val jsMain by getting {
+            dependencies {
+                implementation(compose.html.core)
+                implementation(compose.runtime)
+            }
+        }
         androidMain.dependencies {
             implementation(libs.compose.ui.tooling.preview)
             implementation(libs.androidx.activity.compose)
