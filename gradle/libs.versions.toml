@@ -15,7 +15,7 @@ compose-compiler = "1.5.5"
 compose-plugin = "1.6.0-alpha01"
 junit = "4.13.2"
 kotlin = "1.9.21"
-ktor = "2.3.7"
+ktor = "2.3.8"
 logback = "1.4.14"
 
 [libraries]
