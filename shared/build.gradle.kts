@@ -10,6 +10,9 @@ kotlin {
     wasmJs {
        browser()
     }
+    js(IR) {
+        browser()
+    }
     
     androidTarget {
         compilations.all {
