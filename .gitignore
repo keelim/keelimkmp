@@ -1,0 +1,7 @@
+/.gradle
+/build
+/.idea
+server/build
+composeApp/build
+shared/build
+iosApp
