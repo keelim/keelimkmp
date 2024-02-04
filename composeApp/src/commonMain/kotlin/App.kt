@@ -32,7 +32,7 @@ fun App() {
             AnimatedVisibility(showImage) {
                 Image(
                     painterResource(
-                        DrawableResource("compose-multiplatform.xml")
+                        DrawableResource("compose-multiplatform.xml"),
                     ),
                     null,
                 )
