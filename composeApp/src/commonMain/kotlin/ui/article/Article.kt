@@ -1,4 +1,4 @@
-package ui.aside
+package ui.article
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -7,7 +7,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 
 @Composable
-fun Aside(
+fun Article(
     modifier: Modifier = Modifier,
     slot: @Composable () -> Unit,
 ) {

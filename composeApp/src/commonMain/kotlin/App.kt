@@ -1,40 +1,117 @@
-import androidx.compose.animation.AnimatedVisibility
-import androidx.compose.foundation.Image
+
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.material.Button
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import org.jetbrains.compose.resources.DrawableResource
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.unit.dp
 import org.jetbrains.compose.resources.ExperimentalResourceApi
-import org.jetbrains.compose.resources.painterResource
+import ui.article.Article
+import ui.aside.Aside
+import ui.footer.Footer
+import ui.header.Header
+import ui.nav.Nav
+import ui.section.Section
 
 @OptIn(ExperimentalResourceApi::class)
 @Composable
 fun App() {
     MaterialTheme {
-        var greetingText by remember { mutableStateOf("Hello World!") }
-        var showImage by remember { mutableStateOf(false) }
-        Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
-            Button(onClick = {
-                greetingText = "Compose: ${Greeting().greet()}"
-                showImage = !showImage
-            }) {
-                Text(greetingText)
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .background(Color.Black),
+            verticalArrangement = Arrangement.spacedBy(12.dp)
+        ) {
+            Header(
+                modifier = Modifier
+                    .weight(1f)
+                    .fillMaxSize()
+                    .background(Color.Black)
+            ) {
+                Text(
+                    text = "Header",
+                    modifier = Modifier
+                        .background(Color.Blue),
+                    style = MaterialTheme.typography.h1
+                )
             }
-            AnimatedVisibility(showImage) {
-                Image(
-                    painterResource(
-                        DrawableResource("compose-multiplatform.xml"),
-                    ),
-                    null,
+            Nav(
+                modifier = Modifier
+                    .weight(1f)
+                    .fillMaxSize()
+                    .background(Color.Cyan)
+            ) {
+                Text(
+                    text = "Nav",
+                    modifier = Modifier
+                        .background(Color.Blue),
+                    style = MaterialTheme.typography.h1
+                )
+            }
+            Row(
+                modifier = Modifier
+                    .weight(6f)
+                    .fillMaxSize()
+                    .background(Color.Red),
+                horizontalArrangement = Arrangement.spacedBy(12.dp)
+            ) {
+                Section(
+                    modifier = Modifier
+                        .weight(2f)
+                        .fillMaxSize()
+                        .background(Color.Gray)
+                ) {
+                    Text(
+                        text = "Section",
+                        modifier = Modifier
+                            .background(Color.Blue),
+                        style = MaterialTheme.typography.h1
+                    )
+                }
+                Article(
+                    modifier = Modifier
+                        .weight(5f)
+                        .fillMaxSize()
+                        .background(Color.Green),
+                ) {
+                    Text(
+                        text = "Article",
+                        modifier = Modifier
+                            .background(Color.Blue),
+                        style = MaterialTheme.typography.h1
+                    )
+                }
+                Aside(
+                    modifier = Modifier
+                        .weight(2f)
+                        .fillMaxSize()
+                        .background(Color.Magenta)
+                ) {
+                    Text(
+                        text = "Aside",
+                        modifier = Modifier
+                            .background(Color.Blue),
+                        style = MaterialTheme.typography.h1
+                    )
+                }
+            }
+            Footer(
+                modifier = Modifier
+                    .weight(1.3f)
+                    .fillMaxSize()
+                    .background(Color.Yellow)
+            ) {
+                Text(
+                    text = "Footer",
+                    modifier = Modifier
+                        .background(Color.Blue),
+                    style = MaterialTheme.typography.h1
                 )
             }
         }
