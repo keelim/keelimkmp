@@ -106,14 +106,7 @@ fun App() {
                     .weight(1.3f)
                     .fillMaxSize()
                     .background(Color.Yellow)
-            ) {
-                Text(
-                    text = "Footer",
-                    modifier = Modifier
-                        .background(Color.Blue),
-                    style = MaterialTheme.typography.h1
-                )
-            }
+            )
         }
     }
 }
