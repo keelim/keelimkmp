@@ -4,13 +4,14 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Text
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import org.jetbrains.compose.resources.ExperimentalResourceApi
 import ui.article.Article
 import ui.aside.Aside
 import ui.footer.Footer
@@ -18,14 +19,16 @@ import ui.header.Header
 import ui.nav.Nav
 import ui.section.Section
 
-@OptIn(ExperimentalResourceApi::class)
 @Composable
 fun App() {
     MaterialTheme {
+        val scrollState = rememberScrollState()
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .background(Color.Black),
+                .background(Color.Black)
+                .verticalScroll(scrollState)
+            ,
             verticalArrangement = Arrangement.spacedBy(12.dp)
         ) {
             Header(
@@ -38,7 +41,7 @@ fun App() {
                     text = "Header",
                     modifier = Modifier
                         .background(Color.Blue),
-                    style = MaterialTheme.typography.h1
+                    style = MaterialTheme.typography.headlineSmall
                 )
             }
             Nav(
@@ -51,7 +54,7 @@ fun App() {
                     text = "Nav",
                     modifier = Modifier
                         .background(Color.Blue),
-                    style = MaterialTheme.typography.h1
+                    style = MaterialTheme.typography.headlineSmall
                 )
             }
             Row(
@@ -71,7 +74,7 @@ fun App() {
                         text = "Section",
                         modifier = Modifier
                             .background(Color.Blue),
-                        style = MaterialTheme.typography.h1
+                        style = MaterialTheme.typography.headlineSmall
                     )
                 }
                 Article(
@@ -79,14 +82,7 @@ fun App() {
                         .weight(5f)
                         .fillMaxSize()
                         .background(Color.Green),
-                ) {
-                    Text(
-                        text = "Article",
-                        modifier = Modifier
-                            .background(Color.Blue),
-                        style = MaterialTheme.typography.h1
-                    )
-                }
+                )
                 Aside(
                     modifier = Modifier
                         .weight(2f)
@@ -97,7 +93,7 @@ fun App() {
                         text = "Aside",
                         modifier = Modifier
                             .background(Color.Blue),
-                        style = MaterialTheme.typography.h1
+                        style = MaterialTheme.typography.headlineSmall
                     )
                 }
             }
