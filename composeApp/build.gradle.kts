@@ -38,3 +38,9 @@ kotlin {
 compose.experimental {
     web.application {}
 }
+
+compose.resources {
+    publicResClass = true
+    packageOfResClass = "com.keelim.kmp"
+    generateResClass = auto
+}

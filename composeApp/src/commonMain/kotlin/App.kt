@@ -12,6 +12,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import com.keelim.kmp.Res
+import com.keelim.kmp.aside
+import com.keelim.kmp.header
+import com.keelim.kmp.nav
+import com.keelim.kmp.section
+import org.jetbrains.compose.resources.stringResource
 import ui.article.Article
 import ui.aside.Aside
 import ui.footer.Footer
@@ -38,7 +44,7 @@ fun App() {
                     .background(Color.Black)
             ) {
                 Text(
-                    text = "Header",
+                    text = stringResource(Res.string.header),
                     modifier = Modifier
                         .background(Color.Blue),
                     style = MaterialTheme.typography.headlineSmall
@@ -51,7 +57,7 @@ fun App() {
                     .background(Color.Cyan)
             ) {
                 Text(
-                    text = "Nav",
+                    text = stringResource(Res.string.nav),
                     modifier = Modifier
                         .background(Color.Blue),
                     style = MaterialTheme.typography.headlineSmall
@@ -71,7 +77,7 @@ fun App() {
                         .background(Color.Gray)
                 ) {
                     Text(
-                        text = "Section",
+                        text = stringResource(Res.string.section),
                         modifier = Modifier
                             .background(Color.Blue),
                         style = MaterialTheme.typography.headlineSmall
@@ -90,7 +96,7 @@ fun App() {
                         .background(Color.Magenta)
                 ) {
                     Text(
-                        text = "Aside",
+                        text = stringResource(Res.string.aside),
                         modifier = Modifier
                             .background(Color.Blue),
                         style = MaterialTheme.typography.headlineSmall
